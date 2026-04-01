@@ -66,7 +66,6 @@ Confusion Matrix Heatmap
 Scatter Plot (Pregnancies vs Glucose)
 ⚙️ Installation & Setup
 1️⃣ Clone the Repository
-git clone https://github.com/your-username/diabetes-prediction-app.git
 cd diabetes-prediction-app
 2️⃣ Install Dependencies
 pip install -r requirements.txt
