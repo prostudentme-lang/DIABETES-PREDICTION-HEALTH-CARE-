@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+	<h2>Dataset visualizations</h2>
+	<div class="mt-4">
+		<h3>Scatter Plot</h3>
+		{% if scatter_plot %}
+		<img src="{{url_for('static',filename='images/scatter_plot.png')}}" class="img-fluid">
+	<form action="{{url_for('predict')}}">
+		<button type="submit" class="btn btn-primary">predict</button>
+	</form>
+		{% endif %}
+	</div>
+</div>
+{% endblock %}

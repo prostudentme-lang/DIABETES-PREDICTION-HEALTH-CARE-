@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>machine learning App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+ </head>
+ <body>
+     <header>
+         <h1>welcome to ml app<h1>
+      </header>
+      <main>
+        {% with messages =get_flashed_messages(with_categories=True)%}
+        {% if messages %}
+        <div class="container mt-3">
+            {% for category,message in messages %}
+            <div class="alert alert-{{category}}">
+                {{message}}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+          {% block content %}
+          {% endblock %}
+       </main>
+       <footer>
+       	    <h6>copylight 2025 - Developed by pallavi. all rights reserved</h6>
+       	</footer>
+  </body>
+  </html>

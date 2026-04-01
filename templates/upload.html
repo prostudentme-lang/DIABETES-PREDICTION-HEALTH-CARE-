@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+{% block content %}
+<section class="container mt-5">
+	{% if not files_uploaded %}
+	<h2>upload dataset for diabetes prediction</h2>
+	<form method="POST" action="/upload" enctype="multipart/form-data">
+		<div class="form-group">
+			<label for="file">choose a CSV file:</label>
+			<input type="file" id="file" name="file" class="form-control-file">
+		</div>
+		<button type="submit" class="btn btn-primary mt-3">upload</button>
+	</form>
+	{% endif %}
+
+	{% if file_uploaded %}
+		<h2 class="mt-5"> dataset preview</h2>
+		<table class="table table-bordered text-dark table-light">
+			<thead>
+				<tr>
+					{% for col in columns %}
+						<th>{{col}}</th>
+					{% endfor %}
+				</tr>
+			</thead>
+			<tbody>
+				{% for row in data %}
+					<tr>
+						{% for cell in row %}
+							<td>{{cell}}</td>
+						{% endfor %}
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	<form action="{{url_for('train')}}" style="display:inline;">
+		<button type="submit">train</button>
+	</form>
+	{% endif %}
+</section>
+{% endblock %}
+

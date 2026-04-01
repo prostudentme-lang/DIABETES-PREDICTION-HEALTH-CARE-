@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+	<h2>Diabetes Prediction</h2>
+	<form method="POST" action="{{url_for('predict')}}">
+		<div class="form-group">
+			<label>pregnancies(count:0 to 20):</label>
+			<input type="number" name="Pregnancies" class="form-control" placeholder="number of pregnancies" min="0" max="20" required>
+		</div>
+		<div class="form-group">
+			<label>glucose level(mg/dL:0 to 200):</label>
+			<input type="number" name="Glucose" class="form-control" placeholder="e.g., 120" min="0" max="200" required>
+		</div>
+		<div class="form-group">
+			<label>BloodPressure(mm Hg:40 to 180):</label>
+			<input type="number" name="BloodPressure" class="form-control" placeholder="e.g., 80" min="40" max="180" required>
+		</div>
+		<div class="form-group">
+			<label>skin thickness(mm:0 to 100):</label>
+			<input type="number" name="SkinThickness" class="form-control" placeholder="e.g., 23" min="0" max="100" required>
+		</div>
+		<div class="form-group">
+			<label>insulin level(mu U/mL:0 to 800):</label>
+			<input type="number" name="Insulin" class="form-control" placeholder="e.g., 94" min="0" max="800" required>
+		</div>
+		<div class="form-group">
+			<label>BMI (Body Mass Index:0.0 to 70.0):</label>
+			<input type="number" step="0.1" name="BMI" class="form-control" placeholder="e.g., 28.4" min="0" max="70" required>
+		</div>
+		<div class="form-group">
+			<label>diabetes pedigree function(0.0 to 2.5):</label>
+			<input type="number" step="0.01" name="DiabetesPedigreeFunction" class="form-control" placeholder="e.g., 0.471" min="0" max="2.5" required>
+		</div>
+		<div class="form-group">
+			<label>age(years:5 to 100):</label>
+			<input type="number" name="Age" class="form-control" placeholder="e.g., 45" min="5" max="100" required>
+		</div>
+		<button type="submit">Predict</button>
+	</form>
+</div>
+{% endblock %}
+
+
