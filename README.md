@@ -78,24 +78,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://username:password@local
 python app.py
 5️⃣ Open in Browser
 http://localhost:5000
-📁 Project Structure
-├── app.py
-├── models/
-│   └── model.pkl
-├── static/
-│   └── images/
-├── templates/
-│   ├── index.html
-│   ├── login.html
-│   ├── register.html
-│   ├── dashboard.html
-│   ├── upload.html
-│   ├── train.html
-│   ├── predict.html
-│   ├── result.html
-│   └── visualize.html
-├── uploads/
-└── README.md
+
 💡 Future Enhancements
 Add more ML models (SVM, Logistic Regression)
 Improve UI/UX design
